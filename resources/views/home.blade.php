@@ -32,6 +32,10 @@
                                 @if ($train->arrival_time)
                                     <div class="mb-0"><strong>Ora di Arrivo:</strong> {{ $train->arrival_time }}</div>
                                 @endif
+
+                                @if ($train->departure_date)
+                                    <div class="mb-0"><strong>Data di partenza:</strong> {{ $train->departure_date }}</div>
+                                @endif
                             </div>
                         </div>
                     </div>
