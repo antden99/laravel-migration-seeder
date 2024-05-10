@@ -11,4 +11,16 @@ class PageController extends Controller
         $trainsList = Train::all();
         return view('home',compact('trainsList'));
     }
+
+    public function trains(){
+
+       
+        return view('trains');
+    }
+
+    public function price(){
+
+        
+        return view('price');
+    }
 }
