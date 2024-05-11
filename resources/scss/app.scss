@@ -1,3 +1,14 @@
-@use './partials/showTrains';
+@use "./partials/showTrains";
 
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+
+main.bg_home{
+    height: 100vh;
+}
+.bg_home {
+    background-image: url("/resources/img/home_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}

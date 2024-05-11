@@ -1,9 +1,16 @@
 @extends('layout.app')
 
 @section('content')
-    <main class="bg-dark text-white">
+    <main class="bg-dark text-white bg_home">
         <div class="container">
-            <h1 class="text-center">Trains Available</h1>
+            <form action="{{route('searchTrains','date')}}" class="d-flex flex-column align-items-center">
+                <label for="partenza" class="mb-2">Seleziona la data di partenza:</label>
+                <input type="date" id="partenza" name="partenza" class="mb-2 form-control">
+                <button type="submit" class="btn btn-dark">Ricerca</button>
+            </form>
+
+            <h1 class="text-center p-5">Welcome to this page! Below you will find all the trains leaving today. If you would
+                like to search for available trains for a specific date, please select it in the form above."</h1>
             <div class="row">
                 @foreach ($trainsList as $train)
                     <div class="col-md-4 g-4">
@@ -18,7 +25,8 @@
                                     @endif
 
                                     @if ($train->departure_station)
-                                        <div class="mb-0"><strong>Stazione di Partenza:</strong> {{ $train->departure_station }}</div>
+                                        <div class="mb-0"><strong>Stazione di Partenza:</strong>
+                                            {{ $train->departure_station }}</div>
                                     @endif
 
                                     @if ($train->destination)
@@ -26,7 +34,8 @@
                                     @endif
 
                                     @if ($train->departure_time)
-                                        <div class="mb-0"><strong>Ora di Partenza:</strong> {{ $train->departure_time }}</div>
+                                        <div class="mb-0"><strong>Ora di Partenza:</strong> {{ $train->departure_time }}
+                                        </div>
                                     @endif
 
                                     @if ($train->arrival_time)
@@ -34,7 +43,8 @@
                                     @endif
 
                                     @if ($train->departure_date)
-                                        <div class="mb-0"><strong>Data di partenza:</strong> {{ $train->departure_date }}</div>
+                                        <div class="mb-0"><strong>Data di partenza:</strong> {{ $train->departure_date }}
+                                        </div>
                                     @endif
                                 </div>
                             </div>
@@ -45,4 +55,3 @@
         </div>
     </main>
 @endsection
-

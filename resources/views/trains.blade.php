@@ -2,5 +2,50 @@
 
 
 @section('content')
-<h1>Treni</h1>
+    <main class="bg-dark text-white">
+        <div class="container">
+            <h1 class="text-center">Trains Available</h1>
+            <div class="row">
+                @foreach ($allTrains as $train)
+                    <div class="col-md-4 g-4">
+                        <a href="{{ route('showTrain', $train) }}" class="card-link text-decoration-none">
+                            <div class="card mb-4" style="height: 100%;">
+                                <div class="card-header">
+                                    <h5>Dettagli Treno</h5>
+                                </div>
+                                <div class="card-body">
+                                    @if ($train->agency)
+                                        <div class="mb-0"><strong>Agenzia:</strong> {{ $train->agency }}</div>
+                                    @endif
+
+                                    @if ($train->departure_station)
+                                        <div class="mb-0"><strong>Stazione di Partenza:</strong>
+                                            {{ $train->departure_station }}</div>
+                                    @endif
+
+                                    @if ($train->destination)
+                                        <div class="mb-0"><strong>Destinazione:</strong> {{ $train->destination }}</div>
+                                    @endif
+
+                                    @if ($train->departure_time)
+                                        <div class="mb-0"><strong>Ora di Partenza:</strong> {{ $train->departure_time }}
+                                        </div>
+                                    @endif
+
+                                    @if ($train->arrival_time)
+                                        <div class="mb-0"><strong>Ora di Arrivo:</strong> {{ $train->arrival_time }}</div>
+                                    @endif
+
+                                    @if ($train->departure_date)
+                                        <div class="mb-0"><strong>Data di partenza:</strong> {{ $train->departure_date }}
+                                        </div>
+                                    @endif
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </main>
 @endsection

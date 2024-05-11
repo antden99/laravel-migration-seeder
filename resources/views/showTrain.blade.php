@@ -3,7 +3,7 @@
 @section('content')
     <main class="showTrain">
         <div class="container mt-5 text-center">
-            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aut eveniet illo, possimus repudiandae ipsa cupiditate nemo quidem, maiores est, minus itaque veritatis at alias dolores? Soluta dolorem non velit!</h1>
+            <h1 class="p-5">Dear user, below I list the detailed information for the requested train!</h1>
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <div class="card">
