@@ -10,20 +10,7 @@ class TrainsSeeder extends Seeder
 
     public function run() // nella funzione run() aggiungo un array su cui vado a ciclare per creare nuovi elementi
     {
-        $dataTrains = [
-            [
-                'agency' => 'Agenzia',
-                'departure_station' => 'StazionePartenza',
-                'destination' => 'Destinazione',
-                'departure_time' => '08:00',
-                'arrival_time' => '10:30',
-                'train_code' => 'ABC123',
-                'carriage_number' => 3,
-                'on_time' => true,
-                'price' => 25.99,
-                'is_deleted' => false,
-            ],
-        ];
+        $dataTrains = config('db_trains.arrayTrains');
 
 
         foreach ($dataTrains as $train) {
